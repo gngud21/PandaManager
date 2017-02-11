@@ -17,8 +17,27 @@ class Welcome extends Application
 	 * map to /welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct()
+    {
+        parent::__construct();
+
+        $this->load->model('maindata');
+    }
+
+
 	public function index()
 	{
+
+		$part = $this->maindata->getPart();
+		$assembledBot = $this->maindata->getAssembledBot();
+		$spent = $this->maindata->getSpent();
+		$earned = $this->maindata->getEarned();
+
+		$this->data['part'] = $part;
+		$this->data['assembledBot'] = $assembledBot; 
+		$this->data['spent'] = $spent;
+		$this->data['earned'] = $earned;
+
 		$this->data['pagebody'] = 'welcome';
 		$this->render(); 
 	}
