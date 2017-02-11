@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <title>Team Banana</title>
@@ -90,3 +90,6 @@
 
 </body>
 </html>
+
+<h1>HOMEPAGE</h1>   
+
