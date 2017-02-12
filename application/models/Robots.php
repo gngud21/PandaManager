@@ -1,13 +1,13 @@
 <?php
 
 class Robots extends CI_Model {
-	var $assRobots = array( array('id' => '1', 'top' => 'a1', 'torso' => 'b2', 'bottom' => 'a3'),
-					   array('id' => '2', 'top' => 'a1', 'torso' => 'a2', 'bottom' => 'a3'),
-					   array('id' => '3', 'top' => 'b1', 'torso' => 'b2', 'bottom' => 'b3'),
-				       array('id' => '4', 'top' => 'c1', 'torso' => 'm2', 'bottom' => 'a3'),
-				       array('id' => '5', 'top' => 'm1', 'torso' => 'a2', 'bottom' => 'r3'),
-				       array('id' => '6', 'top' => 'w1', 'torso' => 'w2', 'bottom' => 'w3'),
-				       array('id' => '7', 'top' => 'b1', 'torso' => 'c2', 'bottom' => 'w3')
+	var $assRobots = array( array('id' => '1', 'top' => 'A1', 'torso' => 'B2', 'bottom' => 'A3'),
+					   array('id' => '2', 'top' => 'A1', 'torso' => 'A2', 'bottom' => 'A3'),
+					   array('id' => '3', 'top' => 'B1', 'torso' => 'B2', 'bottom' => 'B3'),
+				       array('id' => '4', 'top' => 'C1', 'torso' => 'M2', 'bottom' => 'A3'),
+				       array('id' => '5', 'top' => 'B1', 'torso' => 'A2', 'bottom' => 'R3'),
+				       array('id' => '6', 'top' => 'W1', 'torso' => 'W2', 'bottom' => 'W3'),
+				       array('id' => '7', 'top' => 'B1', 'torso' => 'C2', 'bottom' => 'W3')
 	);
 	
 	// Constructor
