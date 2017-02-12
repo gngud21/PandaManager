@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <title>Team Banana</title>
@@ -43,7 +43,7 @@
       <h4>Team Banana</h4>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="welcome">Home</a></li>
-        <li><a href="#section2">Parts</a></li>
+        <li><a href="parts">Parts</a></li>
         <li><a href="#section3">Assemble</a></li>
         <li><a href="history">History</a></li>
         <li><a href="#section3">About</a></li>
@@ -90,3 +90,4 @@
 
 </body>
 </html>
+
