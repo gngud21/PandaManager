@@ -44,7 +44,7 @@
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="welcome">Home</a></li>
         <li><a href="parts">Parts</a></li>
-        <li><a href="#section3">Assemble</a></li>
+        <li><a href="assembly">Assemble</a></li>
         <li><a href="history">History</a></li>
         <li><a href="#section3">About</a></li>
       </ul><br>

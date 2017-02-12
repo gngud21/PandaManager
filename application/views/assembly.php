@@ -54,18 +54,21 @@
 	$(document).ready(function() {
 		$('#return').click(function() {
 			if($('input[name="partsCheck"]:checked').val()) {
+				// test for button clicks later implement an actual working function for assign 2
 				//alert('returning part');
 			}
 		});
 		
 		$('#build').click(function() {
 			if($('input[name="partsCheck"]:checked').val()) {
+				// test for button clicks later implement an actual working function for assign 2
 				//alert('building robot');
 			}
 		});
 		
 		$('#send').click(function() {
-			if(($('input[name="AssBotsCheck"]:checked').val()) {
+			if($('input[name="AssBotsCheck"]:checked').val()) {
+				// test for button clicks later implement an actual working function for assign 2
 				//alert('sending to head office');
 			}
 		});
