@@ -14,6 +14,7 @@
 <body>
 
 <div class="container-fluid">
+
     <div class="row content">
         <div class="col-sm-3 sidenav">      
             <h4>Team Banana</h4>
@@ -25,6 +26,7 @@
                 <li><a href="about">About</a></li>
             </ul><br>    
         </div>
+
 
         <div class="col-sm-9">
             <h1>Bot Factory (Team Banana)</h1>
