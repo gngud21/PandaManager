@@ -1,6 +1,6 @@
 <hr>
 <a href="assets/images/parts/{PartImage}" data-lightbox="parts" 
-   data-title="CA Code: {CA} ,  Date Manufactured: {ManuDate}">
+   data-title="CA Code: {CA} ,  Date Manufactured: {ManuDate}, From: {ManuLocat}">
 <img src="assets/images/parts/{PartImage}"/>
 </a>
 <hr>
