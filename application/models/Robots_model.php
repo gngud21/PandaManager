@@ -1,6 +1,6 @@
 <?php
 
-class Robots extends CI_Model {
+class Robots_model extends CI_Model {
 	var $assRobots = array( array('id' => '1', 'top' => 'A1', 'torso' => 'B2', 'bottom' => 'A3'),
 					   array('id' => '2', 'top' => 'A1', 'torso' => 'A2', 'bottom' => 'A3'),
 					   array('id' => '3', 'top' => 'B1', 'torso' => 'B2', 'bottom' => 'B3'),
