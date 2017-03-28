@@ -9,16 +9,16 @@ class Parts extends Application
 	{
 		parent::__construct();
 		
-		$this->load->model('parts_model');
+		$this->load->model('Parts_model');
 	}
 	public function index()
 	{
 		//this is the view we want to show
-        $this->data['pagebody'] ='parts';
+            $this->data['pagebody'] ='parts';
 		
 		//build the iist of transactions, to pass on to our view
 	
-		$source = $this->parts_model -> all();
+		$source = $this->Parts_model -> all();
 		$parts= array();
 		foreach($source as $record)
 			$cells[] = $this->parser->parse('_cells',(array)$record,true);

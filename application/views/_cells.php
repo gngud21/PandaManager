@@ -1,7 +1,7 @@
 <hr>
-<a href="assets/images/parts/{PartImage}" data-lightbox="parts" 
+<a href="/img/parts/{PartImage}" data-lightbox="parts" 
    data-title="CA Code: {CA} ,  Date Manufactured: {ManuDate}, From: {ManuLocat}">
-<img src="assets/images/parts/{PartImage}"/>
+<img src="/img/parts/{PartImage}"/>
 </a>
 <hr>
 <p><b>Part Line: </b>{PartLine}</p>
