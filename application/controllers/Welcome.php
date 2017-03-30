@@ -38,6 +38,16 @@ class Welcome extends Application
 		$this->data['spent'] = $spent;
 		$this->data['earned'] = $earned;
 
+		$response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=305930');
+		//var_dump($response);
+		//var_dump(json_decode($response));
+
+		$str = json_decode($response);
+
+		foreach($str as $row){
+			echo $row->id ."\n";	
+		}
+		
 		$this->data['pagebody'] = 'welcome';
 		$this->render('welcome'); 
 	}
