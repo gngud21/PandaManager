@@ -39,6 +39,8 @@ class Welcome extends Application
 		$this->data['earned'] = $earned;
 
 		$response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=305930');
+//https://umbrella.jlparry.com/work/mybuilds?key=305930'
+		//work/mybuilds
 		//var_dump($response);
 		//var_dump(json_decode($response));
 
