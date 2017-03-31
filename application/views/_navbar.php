@@ -7,6 +7,7 @@
     <li id="pali"><a href="parts">Parts</a></li>
     <li id="asli"><a href="assembly">Assemble</a></li>
     <li id="hili"><a href="history">History</a></li>
+    <li id="mali"><a href="manage">Manage</a></li>
     <li id="abli"><a href="about">About</a></li>
 </ul>
 
