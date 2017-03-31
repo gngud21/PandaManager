@@ -1,6 +1,6 @@
 <?php
 
-class history_model extends CI_Model {
+class History_model extends CI_Model {
 
 	var $data = array(
 		array('TransID' => '1', 'Transaction Type' => 'Sell', 'RobotID'=> 'a0', 'PartsID' => '1' , 'Shipments' => 'Sent',

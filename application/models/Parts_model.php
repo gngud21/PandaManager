@@ -1,6 +1,6 @@
 <?php
 
-class parts_model extends CI_Model {
+class Parts_model extends CI_Model {
 
 	var $data= array(
 		array('PartID' => '1', 'PartLine' => 'A', 'PartModel' => 'A1', 'PartSection' => 'top','PartImage' => 'a1.jpeg',

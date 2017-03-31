@@ -21,17 +21,17 @@ class Welcome extends Application
     {
         parent::__construct();
 
-        $this->load->model('maindata');
+        $this->load->model('Main_model');
     }
 
 
 	public function index()
 	{
 
-		$part = $this->maindata->getPart();
-		$assembledBot = $this->maindata->getAssembledBot();
-		$spent = $this->maindata->getSpent();
-		$earned = $this->maindata->getEarned();
+		$part = $this->Main_model->getPart();
+		$assembledBot = $this->Main_model->getAssembledBot();
+		$spent = $this->Main_model->getSpent();
+		$earned = $this->Main_model->getEarned();
 
 		$this->data['part'] = $part;
 		$this->data['assembledBot'] = $assembledBot; 
@@ -39,7 +39,7 @@ class Welcome extends Application
 		$this->data['earned'] = $earned;
 
 		$this->data['pagebody'] = 'welcome';
-		$this->render(); 
+		$this->render('welcome'); 
 	}
 
 }

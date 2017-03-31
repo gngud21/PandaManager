@@ -1,6 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Maindata extends CI_Model
+
+class Main_model extends CI_Model
 {
 
     //parts, assembled bot, $ spent, # earned

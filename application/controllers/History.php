@@ -9,7 +9,7 @@ class History extends Application
 	{
 		parent::__construct();
 		
-		$this->load->model('history_model');
+		$this->load->model('History_model');
 	}
 
 	public function index()
@@ -18,7 +18,7 @@ class History extends Application
 		$this->data['pagebody'] = 'history';
 
 		// build the list of transactions, to pass on to our view
-		$source = $this->history_model->all();
+		$source = $this->History_model->all();
 		$history = array ();
 		foreach ($source as $record)
 		{
