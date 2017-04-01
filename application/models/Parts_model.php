@@ -15,8 +15,9 @@ class Parts_model extends CI_Model {
 		return $query->result_array();
 	
 	}
+	
+	// inserts robot into parts table
 	function insertRow($table, $data){
 		$this->db->insert($table, $data);
 	}
-
 }
