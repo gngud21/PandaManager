@@ -2,7 +2,7 @@
 
 class Parts_model extends CI_Model {
 
-	var $data= array(
+	var $data = array(
 		array('PartID' => '1', 'PartLine' => 'A', 'PartModel' => 'A1', 'PartSection' => 'top','PartImage' => 'a1.jpeg',
 			  'CA' => 'BAN-A1-T1', 'ManuDate' => '2017-01-28', 'ManuLocat' => 'Coquitlam'),
 			  
@@ -68,5 +68,7 @@ class Parts_model extends CI_Model {
 	{
 		return $this->data;
 	}
-
+	function insertRow($table, $data){
+		$this->db->insert($table, $data);
+	}
 }
