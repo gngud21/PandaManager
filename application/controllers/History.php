@@ -14,7 +14,9 @@ class History extends Application
 
 	public function index()
 	{
+		$role = $this->session->userdata('userrole');
 		
+    if($role == 'boss' || $role == 'supervisor') {
 		// this is the view we want shown
 		$source = $this->History_model->getData();
 		//$this->view('history',$source);
@@ -32,5 +34,8 @@ class History extends Application
 		$this->data['pagebody'] = 'history';
 
 		$this->render();
+    } else {
+			redirect('welcome');
+	  }
 	}
 }
