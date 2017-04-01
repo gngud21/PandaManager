@@ -51,8 +51,5 @@ class Manage extends Application
             echo $response;
         }
         
-        public function getKey()
-        {
-            echo $this->Manage_model->getApiKey();
-        }
+        
 }

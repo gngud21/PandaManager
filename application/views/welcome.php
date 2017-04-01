@@ -19,12 +19,7 @@
         <div class="col-sm-3 sidenav">      
             <h4>Team Banana</h4>
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="welcome">Home</a></li>
-                <li><a href="parts">Parts</a></li>
-                <li><a href="assembly">Assemble</a></li>
-                <li><a href="history">History</a></li>
-                <li><a href="manage">Manage</a></li>
-                <li><a href="about">About</a></li>
+                {navbar}
             </ul><br>    
         </div>
 

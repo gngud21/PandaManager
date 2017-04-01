@@ -511,3 +511,17 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+// Nav Bar Items
+
+$config['nav_items'] = array(
+    'navdata' => array(
+        array('id' => 'weli', 'link' => 'welcome', 'name' => 'Home'),
+        array('id' => 'pali', 'link' => 'parts', 'name' => 'Parts'),
+        array('id' => 'asli', 'link' => 'assembly', 'name' => 'Assemble'),
+        array('id' => 'hili', 'link' => 'history', 'name' => 'History'),
+        array('id' => 'mali', 'link' => 'manage', 'name' => 'Manage'),
+        array('id' => 'abli', 'link' => 'about', 'name' => 'About')  
+    )
+);
