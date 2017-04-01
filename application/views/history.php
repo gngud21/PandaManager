@@ -4,28 +4,23 @@
   <table class="table">
     <thead>
       <tr>
-        <th>TransID</th>
-        <th>Transaction Type</th>
-        <th>RobotID</th>
-        <th>PartsID</th>
-        <th>Shipments</th>
-        <th>Date</th>
-		<th>Time</th>
+        <th>Id</th>
+        <th>Model</th>
+		<th>Plant</th>
+		<th>Stamp</th>
       </tr>
     </thead>
     <tbody>
+	{history}
       <tr>
-	  {history}
-        <td>{TransID}</td>
-        <td>{Transaction Type}</td>
-        <td>{RobotID}</td>
-        <td>{PartsID}</td>
-        <td>{Shipments}</td>
-        <td>{Date}</td>
-		<td>{Time}</td>
+        <td>{id}</td>
+        <td>{model}</td>
+		<td>{plant}</td>
+		<td>{stamp}</td>
       </tr>
 	  {/history}
     </tbody>
   </table>
   </div>
+  <?php echo $this->pagination->create_links(); ?>
 </div>
