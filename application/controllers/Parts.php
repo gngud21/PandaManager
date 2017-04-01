@@ -13,16 +13,21 @@ class Parts extends Application
 	}
 	public function index()
 	{
-		//this is the view we want to show
-            $this->data['pagebody'] ='parts';
 		
 		//build the iist of transactions, to pass on to our view
 	
 		$source = $this->Parts_model -> all();
 		$parts= array();
-		foreach($source as $record)
-			$cells[] = $this->parser->parse('_cells',(array)$record,true);
-		
+		foreach($source as $record){
+			$parts[] = array ('id' => $record['id'],
+							'modelpiece' => $record['model'].$record['piece'].'.jpeg',
+							'plant' => $record['plant'],
+							'stamp' => $record['stamp']
+							);
+							
+		}
+			
+		/*	
 		$this->load->library('table');
 		$parems = array(
 			'table_open' => '<table class="parts">',
@@ -37,11 +42,16 @@ class Parts extends Application
 		$this ->data['parts'] = 'parts';
 		
         $this->render();
+		*/
+		$this->data['parts'] = $parts;
+		$this->data['pagebody'] = 'parts';
+		$this->render();
 	}
-
+	
+	//Buy parts
+	//insert all parts of a box into part table 
 	public function updateTable()
 	{
-	
 		$response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=3350b6');
 		$str = json_decode($response);
 		if(!empty($str)){
@@ -59,4 +69,29 @@ class Parts extends Application
 			}	
 		}
 	}
+	
+	//Build more parts
+	//insert a part into parts & history tables
+	public function buyMoreParts()
+	{
+		$response = file_get_contents('https://umbrella.jlparry.com/work/mybuilds?key=3350b6');
+		$str = json_decode($response);			
+		if(!empty($str)){
+			foreach($str as $row){												
+				$insert_row = array(
+					'id' => $row->id,
+					'model' => $row->model,
+					'piece' => $row->piece,
+					'plant' => $row->plant,
+					'stamp' => $row->stamp
+				);			
+				//add a part to part table 
+				$this->Parts_model->insertRow("parts", $row);				
+				
+				//add a part to history table
+				$this->Parts_model->insertRow("history", $row);				
+				redirect("parts");
+			}			
+		}		
+	}	
 }

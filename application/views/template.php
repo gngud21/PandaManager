@@ -15,6 +15,7 @@ if (!defined('APPPATH'))
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="js/lightbox.min.js"></script>
+		<script src="js/alert.js"></script> 
         <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" media="all" href="/css/reset.css" />
