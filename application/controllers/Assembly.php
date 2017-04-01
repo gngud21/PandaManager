@@ -11,12 +11,15 @@ class Assembly extends Application {
 	}
 	
 	public function index() {
-		$robots = $this->Robots_model->all();
-		$parts = $this->Parts_model->all();
+		$role = $this->session->userdata('userrole');
+		if($role == 'boss' || $role == 'supervisor') {
+			$robots = $this->Robots_model->all();
+			$parts = $this->Parts_model->all();
 	
-		$this->data['robots_model'] = $robots;
-		$this->data['parts_model'] = $parts;
-		$this->data['pagebody'] = 'assembly';
-		$this->render();
+			$this->data['robots_model'] = $robots;
+			$this->data['parts_model'] = $parts;
+			$this->data['pagebody'] = 'assembly';
+			$this->render();		
+		}
 	}
 }

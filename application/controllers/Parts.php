@@ -13,39 +13,27 @@ class Parts extends Application
 	}
 	public function index()
 	{
-		
-		//build the iist of transactions, to pass on to our view
+		$role = $this->session->userdata('userrole');
+		if($role == 'boss' || $role == 'supervisor' || $role == 'worker') {
+			//build the iist of transactions, to pass on to our view
 	
-		$source = $this->Parts_model -> all();
-		$parts= array();
-		foreach($source as $record){
-			$parts[] = array ('id' => $record['id'],
-							'modelpiece' => $record['model'].$record['piece'].'.jpeg',
-							'plant' => $record['plant'],
-							'stamp' => $record['stamp']
-							);
+			$source = $this->Parts_model -> all();
+			$parts= array();
+			foreach($source as $record){
+				$parts[] = array ('id' => $record['id'],
+								  'modelpiece' => $record['model'].$record['piece'].'.jpeg',
+								  'plant' => $record['plant'],
+								  'stamp' => $record['stamp']
+								);
 							
-		}
+			}
 			
-		/*	
-		$this->load->library('table');
-		$parems = array(
-			'table_open' => '<table class="parts">',
-			'cell_start' => '<td class="oneimage">',
-			'cell_alt_start' => '<td class="oneimage">'
-		);
-		
-		$this->table->set_template($parems);
-        $rows = $this->table->make_columns($cells,3);
-        $this->data['partsTable'] = $this->table->generate($rows);
-		
-		$this ->data['parts'] = 'parts';
-		
-        $this->render();
-		*/
-		$this->data['parts'] = $parts;
-		$this->data['pagebody'] = 'parts';
-		$this->render();
+			$this->data['parts'] = $parts;
+			$this->data['pagebody'] = 'parts';
+			$this->render();
+		}else {
+			redirect('welcome');
+		}
 	}
 	
 	//Buy parts
