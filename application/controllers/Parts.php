@@ -39,4 +39,24 @@ class Parts extends Application
         $this->render();
 	}
 
+	public function updateTable()
+	{
+	
+		$response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=3350b6');
+		$str = json_decode($response);
+		if(!empty($str)){
+			foreach($str as $row){	
+				//echo $row->id ."</br>";					
+				$insert_row = array(
+					'id' => $row->id,
+					'model' => $row->model,
+					'piece' => $row->piece,
+					'plant' => $row->plant,
+					'stamp' => $row->stamp
+				);				
+				$this->Parts_model->insertRow("parts", $row);				
+				redirect("parts");
+			}	
+		}
+	}
 }
