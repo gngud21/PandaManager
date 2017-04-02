@@ -4,7 +4,7 @@
 </br>
 <div class="container">
   <h2>Available Parts</h2>                                            
-  <div class="table-responsive">          
+  <!--<div class="table-responsive">          
 	<table class="table">
     <thead>
       <tr>
@@ -25,5 +25,14 @@
 	  {/parts}
     </tbody>
   </table>
+  </div>-->
+  
+  {parts}
+  <div class="col-md-3" style="padding: 15px">
+      <a href="/singlepart/index/{id}">
+        <img src = "/img/parts/{modelpiece}"width="200" height="60" title="{model} {piece}" />
+      </a>
   </div>
+  {/parts}
+  
 </div>

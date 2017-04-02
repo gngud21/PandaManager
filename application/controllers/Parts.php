@@ -21,11 +21,15 @@ class Parts extends Application
 			$source = $this->Parts_model -> all();
 			$parts= array();
 			foreach($source as $record){
-				$parts[] = array('id' => $record['id'],
-								  'modelpiece' => $record['model'].$record['piece'].'.jpeg',
-								  'plant' => $record['plant'],
-								  'stamp' => $record['stamp']
-				);						
+				$parts[] = array (
+                                    'id' => $record['id'],
+                                    'modelpiece' => $record['model'].$record['piece'].'.jpeg',
+                                    'plant' => $record['plant'],
+                                    'stamp' => $record['stamp'],
+                                    'model' => $record['model'],
+                                    'piece' => $record['piece']
+                                );
+							
 			}
 			
 			$this->data['parts'] = $parts;
