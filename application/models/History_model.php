@@ -53,4 +53,9 @@ class History_model extends CI_Model {
 
 		return $query->result_array();
 	}
+	
+	public function insert($data) {
+		$query = $this->db->insert('history', $data);
+		return $query;
+	}
 }

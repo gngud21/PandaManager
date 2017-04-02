@@ -8,6 +8,7 @@ class Assembly extends Application {
 		parent::__construct();
 		$this->load->model('Robots_model');
 		$this->load->model('Parts_model');
+		$this->load->model('History_model');
 	}
 	
 	public function index() {
@@ -65,8 +66,18 @@ class Assembly extends Application {
 			$parts = array($topData[0]["id"], $torsoData[0]["id"], $bottomData[0]["id"]);
 			$this->Parts_model->delete($parts);
 			
-			$pieces = array('top' => $topData[0]["piecemodel"], 'torso' => $torsoData[0]["piecemodel"], 'bottom' => $bottomData[0]["piecemodel"]);
+			$buyBot = file_get_contents('https://umbrella.jlparry.com/work/buymybot/'. $topData[0]["id"] . '/' . $torsoData[0]["id"] . '/' . $bottomData[0]["id"] . '?key=3350b6');
+			$responseArray = explode(" ", $buyBot);
+			$str = $responseArray[1];
+			$pieces = array('top' => $topData[0]["piecemodel"], 'torso' => $torsoData[0]["piecemodel"], 'bottom' => $bottomData[0]["piecemodel"], 'price' => $str);
 			$result = $this->Robots_model->buildRobot($pieces);
+			
+			$historyTop = array('id' => $topData[0]["id"], 'model' => $topData[0]["model"], 'piece' => $topData[0]["piece"], 'plant' => $topData[0]["plant"], 'stamp' => $topData[0]["stamp"]);
+			$historyTorso = array('id' => $topData[0]["id"], 'model' => $torsoData[0]["model"], 'piece' => $torsoData[0]["piece"], 'plant' => $torsoData[0]["plant"], 'stamp' => $torsoData[0]["stamp"]);
+			$historyBottom = array('id' => $bottomData[0]["id"], 'model' => $bottomData[0]["model"], 'piece' => $bottomData[0]["piece"], 'plant' => $bottomData[0]["plant"], 'stamp' => $bottomData[0]["stamp"]);
+			$topResult = $this->History_model->insert($historyTop);
+			$torsoResult = $this->History_model->insert($historyTorso);
+			$bottomResult = $this->History_model->insert($historyBottom);
 			
 			echo $result;
 		}else {
