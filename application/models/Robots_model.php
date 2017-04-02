@@ -19,4 +19,19 @@ class Robots_model extends CI_Model {
 		$query = $this->db->insert('robots', $data);
 		return $query;
 	}
+        
+        // get single robot by id
+        public function getRobotById($id) 
+        {
+            $sql = 'SELECT * FROM robots WHERE ID = "' . $id . '";';
+            $query = $this->db->query($sql);
+            return $query->result_array();
+        }
+        
+        // remove Robot from database by id
+        public function removeRobotById($id) 
+        {
+            $sql = 'DELETE * FROM robots WHERE ID = "' . $id . '";';
+            return $this->db->query($sql);
+        }
 }
