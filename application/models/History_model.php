@@ -150,4 +150,9 @@ class History_model extends CI_Model {
 		$this->db->order_by("piece", "asc");
 		return $query->result_array();
 	}
+	
+	public function insert($data) {
+		$query = $this->db->insert('history', $data);
+		return $query;
+	}
 }
