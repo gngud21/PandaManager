@@ -14,25 +14,28 @@ class History extends Application
 
 	public function index()
 	{
+		$role = $this->session->userdata('userrole');
+		
+    if($role == 'boss' || $role == 'supervisor') {
 		// this is the view we want shown
-		$this->data['pagebody'] = 'history';
-
-		// build the list of transactions, to pass on to our view
-		$source = $this->History_model->all();
+		$source = $this->History_model->getData();
+		//$this->view('history',$source);
+		//var_dump($source);	
 		$history = array ();
 		foreach ($source as $record)
 		{
-			$history[] = array ('TransID' => $record['TransID'],
-								'Transaction Type' => $record['Transaction Type'],
-								'RobotID' => $record['RobotID'],
-								'PartsID' => $record['PartsID'],
-								'Shipments' => $record['Shipments'],
-								'Date' => $record['Date'],
-								'Time' => $record['Time']
+			$history[] = array ('id' => $record['id'],
+								'model' => $record['model'] . $record['piece'],
+								'plant' => $record['plant'],
+								'stamp' => $record['stamp'],
 								);
 		}
 		$this->data['history'] = $history;
+		$this->data['pagebody'] = 'history';
 
 		$this->render();
+    } else {
+			redirect('welcome');
+	  }
 	}
 }
