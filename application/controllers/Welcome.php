@@ -22,6 +22,7 @@ class Welcome extends Application
         parent::__construct();
 
         $this->load->model('Main_model');
+        $this->load->model('Manage_model');
     }
 
 
@@ -36,6 +37,7 @@ class Welcome extends Application
 		$this->data['assembledBot'] = $assembledBot; 
 		$this->data['spent'] = $spent;
 		$this->data['earned'] = $earned;		
+
 		$this->data['pagebody'] = 'welcome';
 		$this->render('welcome'); 
 	}
