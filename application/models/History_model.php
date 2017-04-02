@@ -54,6 +54,7 @@ class History_model extends CI_Model {
 		return $query->result_array();
 	}
 	
+	// sorts by date
 	public function sortingDate() {
 		$this->load->library('pagination');
 		
@@ -102,6 +103,7 @@ class History_model extends CI_Model {
 		return $query->result_array();
 	}
 	
+		// sorts by model
 		public function sortingModel() {
 		$this->load->library('pagination');
 		
@@ -151,6 +153,7 @@ class History_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	// insert data into history table
 	public function insert($data) {
 		$query = $this->db->insert('history', $data);
 		return $query;

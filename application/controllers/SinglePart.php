@@ -10,6 +10,7 @@ class SinglePart extends Application {
         $this->load->model('Parts_model');
     }
 
+	// Renders the availabled pieces in a grid view
     public function index($id = 0) {
         $role = $this->session->userdata('userrole');
         if ($role == 'boss' || $role == 'supervisor' || $role == 'worker') {

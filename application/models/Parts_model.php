@@ -34,14 +34,8 @@ class Parts_model extends CI_Model {
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
-        
-        // retrieves a part by id
-        public function selectById($id) {
-            $sql = 'SELECT * FROM parts WHERE id = "' . $id . '";';
-            $query = $this->db->query($sql);
-            return $query->result_array();
-        }
 	
+	// deletes a robot piece based on id
 	public function delete($id) {
 		$this->db->where_in('id', $id);
 		$query = $this->db->delete('parts');
