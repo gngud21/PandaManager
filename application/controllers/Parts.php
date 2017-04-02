@@ -54,12 +54,12 @@ class Parts extends Application
 					'model' => $row->model,
 					'piece' => $row->piece,
 					'plant' => $row->plant,
-					'stamp' => $row->stamp
+					'stamp' => $row->stamp,
 				);				
-				$this->Parts_model->insertRow("parts", $row);				
-				redirect("parts");
+				$this->Parts_model->insertRow("parts", $row);								
 			}	
 		}
+		redirect("parts");
 	}
 	
 	//Build more parts
@@ -81,9 +81,10 @@ class Parts extends Application
 				$this->Parts_model->insertRow("parts", $row);				
 				
 				//add a part to history table
-				$this->Parts_model->insertRow("history", $row);				
-				redirect("parts");
+				$this->Parts_model->insertRow("history", $row);								
 			}			
 		}
+		redirect("parts");		
+
 	}	
 }
