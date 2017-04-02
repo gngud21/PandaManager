@@ -22,6 +22,7 @@ class Welcome extends Application
         parent::__construct();
 
         $this->load->model('Main_model');
+        $this->load->model('Manage_model');
     }
 
 
@@ -40,7 +41,7 @@ class Welcome extends Application
 
 
 
-	// $response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=305930');
+	// $response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=' . $this->Manage_model->getApiKey());
 	// $str = json_decode($response);
 	// //$id, $model, $piece, $plant, $stamp;
 	// $id = NULL;
@@ -56,12 +57,12 @@ class Welcome extends Application
 	// }
 	
 
-		// $response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=305930');
+		// $response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=' . $this->Manage_model->getApiKey());
 		// $str = json_decode($response);
 		// foreach($str as $row){
 		// 	echo $row->id ."\n";	
 		// }
-//https://umbrella.jlparry.com/work/mybuilds?key=305930'
+//https://umbrella.jlparry.com/work/mybuilds?key=' . $this->Manage_model->getApiKey()
 		//work/mybuilds
 		//var_dump($response);
 		//var_dump(json_decode($response));

@@ -10,6 +10,7 @@ class Parts extends Application
 		parent::__construct();
 		
 		$this->load->model('Parts_model');
+                $this->load->model('Manage_model');
 	}
 	public function index()
 	{
@@ -40,7 +41,7 @@ class Parts extends Application
 	//insert all parts of a box into part table 
 	public function updateTable()
 	{
-		$response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=3350b6');
+		$response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=' . $this->Manage_model->getApiKey());
 		$str = json_decode($response);
 		if(!empty($str)){
 			foreach($str as $row){	
@@ -62,7 +63,7 @@ class Parts extends Application
 	//insert a part into parts & history tables
 	public function buyMoreParts()
 	{
-		$response = file_get_contents('https://umbrella.jlparry.com/work/mybuilds?key=3350b6');
+		$response = file_get_contents('https://umbrella.jlparry.com/work/mybuilds?key=' . $this->Manage_model->getApiKey());
 		$str = json_decode($response);			
 		if(!empty($str)){
 			foreach($str as $row){												
@@ -80,6 +81,6 @@ class Parts extends Application
 				$this->Parts_model->insertRow("history", $row);				
 				redirect("parts");
 			}			
-		}		
+		}
 	}	
 }
