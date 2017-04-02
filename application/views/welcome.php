@@ -29,7 +29,7 @@
                 <div class="col-sm-4 col-md-4">                
                     <div class="category">
                         <h2># of parts on hand</h2>
-                        <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Banana</h5>
                         <h5><span class="label label-success">new</span></h5><br>
                         <p>{part} items</p>
                     </div>                    
@@ -37,9 +37,9 @@
                 <div class="col-sm-4 col-md-4">
                     <div class="category">
                         <h2># of assembled bots</h2>
-                        <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Banana</h5>
                         <h5><span class="label label-success">new</span></h5><br>
-                        <p>{assembledBot} items</p>
+                        <p>{assembledBot} bots</p>
                     </div>
                     
                 </div>                    
@@ -48,17 +48,17 @@
                 <div class="col-sm-4 col-md-4">
                     <div class="category">
                         <h2>$ spent</h2>
-                        <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Banan</h5>
                         <h5><span class="label label-success">new</span></h5><br>
                         <p>${spent} spent</p>
                     </div>                    
                 </div>
                 <div class="col-sm-4 col-md-4">
                     <div class="category">
-                        <h2># earned</h2>
-                        <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
+                        <h2>$ earned</h2>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Banana</h5>
                         <h5><span class="label label-success">new</span></h5><br>
-                        <p>{earned} items</p>
+                        <p>${earned}</p>
                     </div>                    
                 </div>                                        
             </div>                    
