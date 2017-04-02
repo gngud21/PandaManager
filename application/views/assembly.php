@@ -73,11 +73,12 @@
 		$('#return').click(function() {
 			if($('input[name="partsCheck"]:checked').val()) {
 
-				// test for button clicks later implement an actual working function for assign 2
+				//test for button clicks later implement an actual working function for assign 2
 				//alert('returning part');
 			}
 		});
 		
+		// builds a robot; sends the selected radio box' data to controller function in assembly/build
 		$('#build').click(function() {
 			if($('input[name="topCheck"]:checked').val() && $('input[name="torsoCheck"]:checked').val() && $('input[name="bottomCheck"]:checked').val()) {
 				var top = $('input[name="topCheck"]:checked').val();
@@ -104,7 +105,7 @@
 		
 		$('#send').click(function() {
 			if($('input[name="AssBotsCheck"]:checked').val()) {
-				// test for button clicks later implement an actual working function for assign 2
+				//test for button clicks later implement an actual working function for assign 2
 				//alert('sending to head office');
 			}
 		});
