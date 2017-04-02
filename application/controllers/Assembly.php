@@ -9,8 +9,10 @@ class Assembly extends Application {
 		$this->load->model('Robots_model');
 		$this->load->model('Parts_model');
 		$this->load->model('History_model');
+		$this->load->model('Manage_model');
 	}
 	
+	// Checks if the user has role priviledges if so, renders the data to the assembly view for display
 	public function index() {
 		$role = $this->session->userdata('userrole');
 		if($role == 'boss' || $role == 'supervisor') {
@@ -66,7 +68,7 @@ class Assembly extends Application {
 			$parts = array($topData[0]["id"], $torsoData[0]["id"], $bottomData[0]["id"]);
 			$this->Parts_model->delete($parts);
 			
-			$buyBot = file_get_contents('https://umbrella.jlparry.com/work/buymybot/'. $topData[0]["id"] . '/' . $torsoData[0]["id"] . '/' . $bottomData[0]["id"] . '?key=3350b6');
+			$buyBot = file_get_contents('https://umbrella.jlparry.com/work/buymybot/'. $topData[0]["id"] . '/' . $torsoData[0]["id"] . '/' . $bottomData[0]["id"] . '?key=' . $this->Manage_model->getApiKey());
 			$responseArray = explode(" ", $buyBot);
 			$str = $responseArray[1];
 			$pieces = array('top' => $topData[0]["piecemodel"], 'torso' => $torsoData[0]["piecemodel"], 'bottom' => $bottomData[0]["piecemodel"], 'price' => $str);
