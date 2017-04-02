@@ -1,6 +1,6 @@
 
 {navdata}
-    <li id="{id}"><a href="{link}">{name}</a></li>
+    <li id="{id}"><a href="/{link}">{name}</a></li>
 {/navdata}
 
 <li class="dropdown">
