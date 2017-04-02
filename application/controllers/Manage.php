@@ -36,25 +36,27 @@ class Manage extends Application
 		}
 	}
 
-        public function generateAPI($code) 
-        {
-            $response = file_get_contents('https://umbrella.jlparry.com/work/registerme/' . TEAM_NAME . '/' . $code);
+	// generates sa new api key
+    public function generateAPI($code) 
+    {
+        $response = file_get_contents('https://umbrella.jlparry.com/work/registerme/' . TEAM_NAME . '/' . $code);
             
-            if (strpos($response, "Oops: Bad password!") !== 0) {
-                $newAPI = explode(' ',$response)[1];
-                $response = "Your new API key is: " . $newAPI;
-                $this->Manage_model->updateApiKey($newAPI);
-            }
-            
-            echo $response;
+        if (strpos($response, "Oops: Bad password!") !== 0) {
+            $newAPI = explode(' ',$response)[1];
+            $response = "Your new API key is: " . $newAPI;
+            $this->Manage_model->updateApiKey($newAPI);
         }
+            
+        echo $response;
+    }
         
-        public function rebootAPI() 
-        {
-            $response = file_get_contents('https://umbrella.jlparry.com/work/rebootme?key=' . $this->Manage_model->getApiKey());
+	// reboots/restarts out bot factory participation and resets our balance	
+    public function rebootAPI() 
+    {
+        $response = file_get_contents('https://umbrella.jlparry.com/work/rebootme?key=' . $this->Manage_model->getApiKey());
             
-            echo $response;
-        }
+        echo $response;
+    }
         
         
 }
