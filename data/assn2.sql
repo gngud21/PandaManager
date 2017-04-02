@@ -263,4 +263,4 @@ CREATE TABLE apikeys (
 );
 
 INSERT INTO apikeys (apiId, apiKey) VALUES
-(1, '321b6d');
+(1, '3350b6');
