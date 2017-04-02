@@ -38,6 +38,35 @@ class Welcome extends Application
 		$this->data['spent'] = $spent;
 		$this->data['earned'] = $earned;
 
+
+
+	// $response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=305930');
+	// $str = json_decode($response);
+	// //$id, $model, $piece, $plant, $stamp;
+	// $id = NULL;
+	// if(!empty($str)){
+	// 	foreach($str as $row){	
+	// 		$id = $row->id;	
+	// 		// $model = $row->model;	
+	// 		// $piece = $row->piece;
+	// 		// $plant = $row->plant; 
+	// 		// $stamp = $row->stamp; 
+	// 		echo $id;
+	// 	}	
+	// }
+	
+
+		// $response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=305930');
+		// $str = json_decode($response);
+		// foreach($str as $row){
+		// 	echo $row->id ."\n";	
+		// }
+//https://umbrella.jlparry.com/work/mybuilds?key=305930'
+		//work/mybuilds
+		//var_dump($response);
+		//var_dump(json_decode($response));
+
+		
 		$this->data['pagebody'] = 'welcome';
 		$this->render('welcome'); 
 	}

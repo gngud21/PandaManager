@@ -27,8 +27,13 @@ class Manage extends Application
 
 	public function index()
 	{
-		$this->data['pagebody'] = 'manage';
-		$this->render(); 
+		$role = $this->session->userdata('userrole');
+		if($role == 'boss') {
+			$this->data['pagebody'] = 'manage';
+			$this->render(); 
+		}else {
+			redirect('welcome');
+		}
 	}
 
         public function generateAPI($code) 

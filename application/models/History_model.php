@@ -2,31 +2,55 @@
 
 class History_model extends CI_Model {
 
-	var $data = array(
-		array('TransID' => '1', 'Transaction Type' => 'Sell', 'RobotID'=> 'a0', 'PartsID' => '1' , 'Shipments' => 'Sent',
-			'Date' => '2017-03-10', 'Time' => '6:32 PM'),
-		array('TransID' => '2', 'Transaction Type' => 'Return', 'RobotID'=> 'b0', 'PartsID' => '2' , 'Shipments' => 'Received',
-			'Date' => '2017-04-10', 'Time' => '7:32 PM'),
-		array('TransID' => '4', 'Transaction Type' => 'Sell', 'RobotID'=> 'c0', 'PartsID' => '3' , 'Shipments' => 'Sent',
-			'Date' => '2017-03-10', 'Time' => '6:32 PM'),
-		array('TransID' => '5', 'Transaction Type' => 'Return', 'RobotID'=> 'm0', 'PartsID' => '4' , 'Shipments' => 'Received',
-			'Date' => '2017-04-10', 'Time' => '7:32 PM'),
-		array('TransID' => '5', 'Transaction Type' => 'Sell', 'RobotID'=> 'r0', 'PartsID' => '5' , 'Shipments' => 'Sent',
-			'Date' => '2017-03-10', 'Time' => '7:32 PM'),
-		array('TransID' => '5', 'Transaction Type' => 'Buy', 'RobotID'=> 'w0', 'PartsID' => '6' , 'Shipments' => 'Delayed',
-			'Date' => '2017-04-10', 'Time' => '8:32 PM')
-	);
-
 	// Constructor
 	public function __construct()
 	{
 		parent::__construct();
 	}
 
-	// retrieve all of the data
-	public function all()
-	{
-		return $this->data;
-	}
+	function getData(){
+		$this->load->library('pagination');
+		
+		//gets database
+		$query = $this->db->get('history',20,$this->uri->segment(3));
+		$data['history'] = $query->result();
+		
+		$query2 = $this->db->get('history');
+		
+		$config['base_url'] = base_url().'history/index';
+		$config['total_rows'] = $query2->num_rows();
+		$config['per_page'] = 20;
+		$config['num_links'] = 25;
+		
+		
 
+		$config['full_tag_open'] = '<ul class="pagination">';
+		$config['full_tag_close']= '</ul>';
+		
+		$config['first_tag_open']= '<li>';
+		$config['last_tag_open'] = '<li>';
+
+		$config['next_tag_open'] = '<li>';
+		$config['next_link'] = 'Next';
+
+        $config['prev_tag_open'] = '<li>';
+		$config['prev_link'] = 'Previous';
+		
+		$config['num_tag_open']= '<li>';
+		$config['num_tag_close']= '</li>';
+		
+		$config['first_tag_close'] = '</li>';
+		$config['last_tag_close'] = '</li>';
+		
+		$config['next_tag_close'] = '</li>';
+        $config['prev_tag_close'] = '</li>';
+         
+        $config['cur_tag_open'] = "<li class=\"active\"><span><b>";
+        $config['cur_tag_close'] = "</b></span></li>";
+		
+		$this->pagination->initialize($config);
+		//$this->load->view('history',$data);
+
+		return $query->result_array();
+	}
 }
