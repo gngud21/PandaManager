@@ -22,12 +22,12 @@ class Welcome extends Application
         parent::__construct();
 
         $this->load->model('Main_model');
+        $this->load->model('Manage_model');
     }
 
 
 	public function index()
 	{
-
 		$part = $this->Main_model->getPart();
 		$assembledBot = $this->Main_model->getAssembledBot();
 		$spent = $this->Main_model->getSpent();
@@ -36,37 +36,8 @@ class Welcome extends Application
 		$this->data['part'] = $part;
 		$this->data['assembledBot'] = $assembledBot; 
 		$this->data['spent'] = $spent;
-		$this->data['earned'] = $earned;
+		$this->data['earned'] = $earned;		
 
-
-
-	// $response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=305930');
-	// $str = json_decode($response);
-	// //$id, $model, $piece, $plant, $stamp;
-	// $id = NULL;
-	// if(!empty($str)){
-	// 	foreach($str as $row){	
-	// 		$id = $row->id;	
-	// 		// $model = $row->model;	
-	// 		// $piece = $row->piece;
-	// 		// $plant = $row->plant; 
-	// 		// $stamp = $row->stamp; 
-	// 		echo $id;
-	// 	}	
-	// }
-	
-
-		// $response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=305930');
-		// $str = json_decode($response);
-		// foreach($str as $row){
-		// 	echo $row->id ."\n";	
-		// }
-//https://umbrella.jlparry.com/work/mybuilds?key=305930'
-		//work/mybuilds
-		//var_dump($response);
-		//var_dump(json_decode($response));
-
-		
 		$this->data['pagebody'] = 'welcome';
 		$this->render('welcome'); 
 	}

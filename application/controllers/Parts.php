@@ -10,6 +10,7 @@ class Parts extends Application
 		parent::__construct();
 		
 		$this->load->model('Parts_model');
+                $this->load->model('Manage_model');
 	}
 	public function index()
 	{
@@ -20,12 +21,11 @@ class Parts extends Application
 			$source = $this->Parts_model -> all();
 			$parts= array();
 			foreach($source as $record){
-				$parts[] = array ('id' => $record['id'],
+				$parts[] = array('id' => $record['id'],
 								  'modelpiece' => $record['model'].$record['piece'].'.jpeg',
 								  'plant' => $record['plant'],
 								  'stamp' => $record['stamp']
-								);
-							
+				);						
 			}
 			
 			$this->data['parts'] = $parts;
@@ -40,7 +40,7 @@ class Parts extends Application
 	//insert all parts of a box into part table 
 	public function updateTable()
 	{
-		$response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=3350b6');
+		$response = file_get_contents('https://umbrella.jlparry.com/work/buybox?key=' . $this->Manage_model->getApiKey());
 		$str = json_decode($response);
 		if(!empty($str)){
 			foreach($str as $row){	
@@ -50,19 +50,19 @@ class Parts extends Application
 					'model' => $row->model,
 					'piece' => $row->piece,
 					'plant' => $row->plant,
-					'stamp' => $row->stamp
+					'stamp' => $row->stamp,
 				);				
-				$this->Parts_model->insertRow("parts", $row);				
-				redirect("parts");
+				$this->Parts_model->insertRow("parts", $row);								
 			}	
 		}
+		redirect("parts");
 	}
 	
 	//Build more parts
 	//insert a part into parts & history tables
 	public function buyMoreParts()
 	{
-		$response = file_get_contents('https://umbrella.jlparry.com/work/mybuilds?key=3350b6');
+		$response = file_get_contents('https://umbrella.jlparry.com/work/mybuilds?key=' . $this->Manage_model->getApiKey());
 		$str = json_decode($response);			
 		if(!empty($str)){
 			foreach($str as $row){												
@@ -77,9 +77,10 @@ class Parts extends Application
 				$this->Parts_model->insertRow("parts", $row);				
 				
 				//add a part to history table
-				$this->Parts_model->insertRow("history", $row);				
-				redirect("parts");
+				$this->Parts_model->insertRow("history", $row);								
 			}			
-		}		
+		}
+		redirect("parts");		
+
 	}	
 }
