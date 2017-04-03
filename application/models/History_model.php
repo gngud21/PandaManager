@@ -69,8 +69,6 @@ class History_model extends CI_Model {
 		$config['per_page'] = 20;
 		$config['num_links'] = 5;
 		
-		
-
 		$config['full_tag_open'] = '<ul class="pagination">';
 		$config['full_tag_close']= '</ul>';
 		
@@ -100,7 +98,8 @@ class History_model extends CI_Model {
 		$this->db->select("*");
 		$this->db->from("history");
 		$this->db->order_by("stamp", "asc");
-		return $query->result_array();
+
+		return $query = $this->db->get()->result_array();
 	}
 	
 		// sorts by model
@@ -150,6 +149,7 @@ class History_model extends CI_Model {
 		$this->db->from("history");
 		$this->db->order_by("model", "asc");
 		$this->db->order_by("piece", "asc");
+		$query = $this->db->get();
 		return $query->result_array();
 	}
 
