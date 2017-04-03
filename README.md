@@ -42,16 +42,6 @@ About page
 
 Inform the user that this is an academic project, and not related to, or endorsed by, any similar business from the real world.
 
-Tasks part2:
-
-Homepage
-
-Homepage was all hardcoded. Refactor the homepage so that the data is being pulled from the model by the controller.
-
-Your Data
-
-You have provided mock data for assignment 1. Put this into appropriate tables in a MySQL database for assignment 2. It is up to you how you wish to track "history" - that could be one table, or it could be separate history tables for each kind of activity. The "live" data to use will be retrieved from the Umbrella server, per directions that follow. The SQL dump in your repository should be a known starting point, suitable for test data. The mock data from assignment 1 could be good for this.
-
 User Roles
 
 I suggest a menu dropdown to switch between user roles, as with labs 5-7. You do not need authentication for this assignment.
