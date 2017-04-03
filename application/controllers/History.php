@@ -65,7 +65,6 @@ class History extends Application
 		
 	public function modelSort(){
 		$role = $this->session->userdata('userrole');
-		
 		if($role == 'boss' || $role == 'supervisor') {
 		$sortModel = $this->History_model->sortingModel();
 		
@@ -78,7 +77,6 @@ class History extends Application
 									'stamp' => $record['stamp'],
 									);
 			}
-			
 		$this->data['history'] = $history;
 		$this->data['pagebody'] = 'history';
 		$this->render();
