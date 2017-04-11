@@ -55,9 +55,10 @@ class Parts extends Application
 					'stamp' => $row->stamp
 				);				
 				$this->Parts_model->insertRow("parts", $row);				
-				redirect("parts");
+				//redirect("parts");
 			}	
 		}
+		redirect("parts");
 	}
 	
 	//Build more parts
@@ -80,8 +81,9 @@ class Parts extends Application
 				
 				//add a part to history table
 				$this->Parts_model->insertRow("history", $row);				
-				redirect("parts");
+				//redirect("parts");
 			}			
-		}		
+		}
+		redirect("parts");		
 	}	
 }
