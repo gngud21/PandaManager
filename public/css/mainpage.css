@@ -1,4 +1,4 @@
-<style>
+
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
     .row.content {height: 1500px}
 
@@ -27,4 +27,7 @@
 
         color: black;
     }
-</style>
+
+    .category {
+        background-color: gold;
+    }

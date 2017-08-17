@@ -1,44 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+<div>
+<form>
+	<button type="submit" id="filter" class="btn btn-primary btn-sm" formaction="/History/dateSort">Sort by date</button>
+	<button type="submit" id="filter" class="btn btn-primary btn-sm" formaction="/History/modelSort">Sort by robot model</button>
+</form>
+</div>
 
 <div class="container">
   <h2>History</h2>                                            
   <div class="table-responsive">          
-  <table class="table">
+  <table class="table table-striped table-bordered">
     <thead>
       <tr>
-        <th>TransID</th>
-        <th>Transaction Type</th>
-        <th>RobotID</th>
-        <th>PartsID</th>
-        <th>Shipments</th>
-        <th>Date</th>
-		<th>Time</th>
+        <th>Id</th>
+        <th>Model</th>
+		<th>Plant</th>
+		<th>Date</th>
       </tr>
     </thead>
     <tbody>
+	{history}
       <tr>
-	  {history}
-        <td>{TransID}</td>
-        <td>{Transaction Type}</td>
-        <td>{RobotID}</td>
-        <td>{PartsID}</td>
-        <td>{Shipments}</td>
-        <td>{Date}</td>
-		<td>{Time}</td>
+        <td>{id}</td>
+        <td>{model}</td>
+		<td>{plant}</td>
+		<td>{stamp}</td>
       </tr>
 	  {/history}
     </tbody>
   </table>
   </div>
+  <?php echo $this->pagination->create_links(); ?>
 </div>
-
-</body>
-</html>

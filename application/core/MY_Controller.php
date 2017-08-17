@@ -31,9 +31,10 @@ class Application extends CI_Controller
 	 * Render this page
 	 */
 	function render($template = 'template')
-	{
+	{       
+    $this->data['navbar'] = $this->parser->parse('_navbar', $this->config->item('nav_items'), true);
 		$this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
-		$this->parser->parse('template', $this->data);
+		$this->parser->parse($template, $this->data);
 	}
 
 }

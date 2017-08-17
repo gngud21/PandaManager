@@ -9,59 +9,64 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!--     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" media="screen"/> -->
-    <link href="/assets/css/mainpage.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/mainpage.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
 <div class="container-fluid">
-
     <div class="row content">
-        <div class="col-sm-3 sidenav">      
+        <div class="col-sm-3 col-md-3 sidenav">      
             <h4>Team Banana</h4>
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="welcome">Home</a></li>
-                <li><a href="parts">Parts</a></li>
-                <li><a href="assembly">Assemble</a></li>
-                <li><a href="history">History</a></li>
-                <li><a href="about">About</a></li>
-            </ul><br>    
+
+                {navbar}
+            </ul>
         </div>
-
-
-        <div class="col-sm-9">
-            <h1>Bot Factory (Team Banana)</h1>
+        <div class="col-sm-9 col-md-9">      
+            <h1>Bot Factory (Team Banana)</h1>    
             <hr>
-            <h2># of parts on hand</h2>
-            <h5><span class="glyphicon glyphicon-time"></span> Post by Jane Dane, Sep 27, 2015.</h5>
-            <h5><span class="label label-success">new</span></h5><br>
-            <p>{part} items</p>
-            <br>
-
-            <hr>
-            <h2># of assembled bots</h2>
-            <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
-            <h5><span class="label label-success">new</span></h5><br>
-            <p>{assembledBot} items</p>
-            <hr>
-
-            <h2>$ spent</h2>
-            <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
-            <h5><span class="label label-success">new</span></h5><br>
-            <p>${spent} spent</p>
-            <hr>
-              
-            <h2># earned</h2>
-            <h5><span class="glyphicon glyphicon-time"></span> Post by John Doe, Sep 24, 2015.</h5>
-            <h5><span class="label label-success">new</span></h5><br>
-            <p>{earned} items</p>
-            <hr>
+            <div class="row">
+                <div class="col-sm-4 col-md-4">                
+                    <div class="category">
+                        <h2># of parts on hand</h2>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Banana</h5>
+                        <h5><span class="label label-success">new</span></h5><br>
+                        <p>{part} items</p>
+                    </div>                    
+                </div>                            
+                <div class="col-sm-4 col-md-4">
+                    <div class="category">
+                        <h2># of assembled bots</h2>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Banana</h5>
+                        <h5><span class="label label-success">new</span></h5><br>
+                        <p>{assembledBot} bots</p>
+                    </div>
+                    
+                </div>                    
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-md-4">
+                    <div class="category">
+                        <h2>$ spent</h2>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Banan</h5>
+                        <h5><span class="label label-success">new</span></h5><br>
+                        <p>${spent} spent</p>
+                    </div>                    
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div class="category">
+                        <h2>$ earned</h2>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Banana</h5>
+                        <h5><span class="label label-success">new</span></h5><br>
+                        <p>${earned}</p>
+                    </div>                    
+                </div>                                        
+            </div>                    
         </div>
     </div>
+    <footer class="container-fluid">
+      <p>&copy;Team Banana</p>
+    </footer>    
 </div>
-
-<footer class="container-fluid">
-  <p>&copy;Team Banana</p>
-</footer>
-
 </body>
 </html>
